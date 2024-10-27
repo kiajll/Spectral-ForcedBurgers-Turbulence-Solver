@@ -53,11 +53,15 @@ Modify parameters in `main_solver.m` to change simulation settings:
 * `dt`: Time step,
 * `tf`: Total simulation time,
 * `nu`: Viscosity coefficient.
-### Results and Visualization
-The solver outputs the velocity field over time, which can be visualized to observe shock formations, energy cascades, and other turbulent structures. Example visualization functions are provided in plot_results.m.
+## Results and Visualization
+The solver outputs the velocity field over time, which can be visualized to observe shock formations, energy spectrum, turbulent kinetic energy, energy dissipation rate, and other statistically turbulent structures. 
 
-References
-Jérémie Bec & Konstantin Khanin (2007). Burgers turbulence. Physics Reports, 447(1-4), 1–66.
-Pope, S.B. (2000). Turbulent Flows. Cambridge University Press.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## References
+* J. M. Burgers, “Mathematical Examples Illustrating Relations Occurring in the Theory of Turbulent Fluid Motion,” in Selected Papers of J. M. Burgers, F. T. M. Nieuwstadt and J. A. Steketee, Eds., Dordrecht: Springer Netherlands, 1939, pp. 281–334.
+* D. T. Jeng and W. C. Meecham, “Solution of Forced Burgers Equation,” in The Physics of Fluids, vol. 15, no. 3, pp. 504–506, Mar. 1972.
+* Jérémie Bec & Konstantin Khanin (2007). Burgers turbulence. Physics Reports, 447(1-4), 1–66.
+* Pope, S.B. (2000). Turbulent Flows. Cambridge University Press.
+* Girimaji, S. S., & Zhou, Y. (1995). Spectrum and energy transfer in steady Burgers turbulence. Physics Letters A, 202(4), 279–287.
+* Jalali, Kiarash. (2024). Towards the Inviscid Limit: A New Perspective on TKE in Forced Burgers Turbulence. 10.11159/ffhmt24.113. 
+### License
+This project is licensed under the MIT License.
