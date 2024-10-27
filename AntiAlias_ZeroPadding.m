@@ -11,7 +11,7 @@ function nonlinear_term_hat = AntiAlias_ZeroPadding(u_hat,Lx)
 %##                                                                      ##
 %##########################################################################
 N = length(u_hat);
-M = 3*N/2;         % 3/2th rule
+M = 3*N/2;                                % 3/2-rule
 u_hat_pad = [u_hat(1:N/2) zeros(1, M-N) u_hat(N/2+1:end)];
 w_pad = ifft(u_hat_pad);
 w_pad_hat = fft(w_pad);
@@ -20,8 +20,8 @@ w_pad_hat = fft(w_pad);
 u_extended = real(ifft(w_pad_hat));
 
 % Compute wave numbers in extended space
-m_extended = -M/2:M/2-1;                        % harmonic number
-k_extended = (m_extended*2*pi/Lx);              % wave number
+m_extended = -M/2:M/2-1;                  % harmonic number
+k_extended = (m_extended*2*pi/Lx);        % wave number
 k_extended = fftshift(k_extended);
 
 % Compute the derivative (du/dx) in physical space:
