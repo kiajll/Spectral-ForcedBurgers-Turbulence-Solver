@@ -21,7 +21,7 @@ Lx = 1;                       % Length of Domain Function
 u_x0 = readmatrix(Initial_Velocity_Field.txt);
 N = Length(u_x0);             % Number of points in the spatial domain
 u = u_x0;
-u(1,N+1) = u(1,1);
+u(1,N+1) = u(1,1);            % Periodic Domain condition
 % 03.Spatial Discretization
 dx = Lx/N; 
 x_min = -Lx/2;
@@ -62,7 +62,7 @@ for k = 1:Nt
     R3 = RHS_FFT_RK_NON(nu,Lx,kx_m,u3) + ff;
     
     u = u1 + (dt/9)*( 2*R1 + 3*R2 + 4*R3 );   
-    u (1,N+1) = u(1,1);
+    u (1,N+1) = u(1,1);       % Periodic Domain condition
        
 uhat = fft(u(1:N));   
 [Ek, TKE, Dk, epsilon] = Energy_spectrum(nu,kx_m(1:N/2),uhat(1:N/2));
