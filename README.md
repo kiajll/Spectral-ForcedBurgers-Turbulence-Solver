@@ -64,4 +64,7 @@ The solver outputs the velocity field over time, which can be visualized to obse
 * Girimaji, S. S., & Zhou, Y. (1995). Spectrum and energy transfer in steady Burgers turbulence. Physics Letters A, 202(4), 279–287.
 * Jalali, Kiarash. (2024). Towards the Inviscid Limit: A New Perspective on TKE in Forced Burgers Turbulence. 10.11159/ffhmt24.113. 
 ### License
-This project is licensed under the MIT License.
+```bash
+Licensed under the Creative Commons Attribution-NoDerivatives 4.0 International License.
+To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/.
+```
