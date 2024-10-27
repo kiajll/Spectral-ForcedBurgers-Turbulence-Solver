@@ -28,7 +28,7 @@ x_min = -Lx/2;
 x_max = Lx/2;
 x = linspace(x_min, x_max, N + 1);
 % 04. Inject Forcing field evolved in time
-F_xt = readmatrix(Force_field.txt);
+F_xt = readmatrix(spectral_forcing.txt);
 [Nt,Nx]=size(F_xt);
 % 05.Time Discretization
 tf = 1;                       % Final Time
