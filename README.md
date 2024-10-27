@@ -8,79 +8,28 @@ This repository contains a MATLAB implementation of a 1D Fourier Galerkin solver
 * Periodic Domain: Enforces periodic boundary conditions, a common setup in turbulence simulations.
 ## Contents
 * `main_solver.m`: The primary script for setting up and running simulations.
-* `rk3_time_step.m`: A function implementing the 3rd-order compact Runge-Kutta time integration.
+* `RHS_FFT_rk3.m`: A function implementing the right-hand side of the 3rd-order compact Runge-Kutta time integration.
+* `AntiAlias_ZeroPadding.m`
+* `Energy_spectrum.m`
 * `spectral_forcing.m`: A function generating external forcing for the Burgers equation.
-* `initial_conditions.m`: A function defining the initial conditions for the simulation.
+* `initial_Velocity_Field.m`: A function defining the initial conditions for the simulation.
 ## Background
 The forced Burgers equation is a fundamental model for studying turbulence, shock formation, and energy transfer in fluid dynamics. In this solver, the Fourier-Galerkin method provides spectral accuracy by projecting the equation onto Fourier modes, while the Runge-Kutta scheme stabilizes the integration over time.
 
 ## Equation Formulation
 The forced Burgers equation is given by:
 
-∂
-𝑢
-∂
-𝑡
-+
-𝑢
-∂
-𝑢
-∂
-𝑥
-=
-𝜈
-∂
-2
-𝑢
-∂
-𝑥
-2
-+
-𝑓
-(
-𝑥
-,
-𝑡
-)
-∂t
-∂u
-​
- +u 
-∂x
-∂u
-​
- =ν 
-∂x 
-2
- 
-∂ 
-2
- u
-​
- +f(x,t)
+$$\frac{\partial u}{\partial t}+ u \frac{\partial u}{\partial x}=\nu \frac{\partial ^2 u}{\partial x ^2}+f(x,t)$$
+
 where:
+* $u=u(x,t)$: Velocity field,
+* $\nu$: Kinematic viscosity coefficient,
+* $f(x,t)$: External forcing term.
+## Spectral Method
+Using the Fourier-Galerkin method, the equation is transformed into Fourier space, where differentiation is straightforward and avoids spatial discretization errors.
 
-𝑢
-(
-𝑥
-,
-𝑡
-)
-u(x,t): Velocity field,
-𝜈
-ν: Viscosity coefficient,
-𝑓
-(
-𝑥
-,
-𝑡
-)
-f(x,t): External forcing term.
-Spectral Method
-Using the Fourier Galerkin method, the equation is transformed into Fourier space, where differentiation is straightforward and avoids spatial discretization errors.
-
-Time Integration
-The 3rd-order Runge-Kutta scheme advances the solution over time. This method ensures sufficient stability and accuracy for turbulent flow simulations.
+### Time Integration
+The Explicit 3rd-order Runge-Kutta scheme advances the solution over time. This method ensures sufficient stability and accuracy for turbulent flow simulations.
 
 Usage
 Requirements
@@ -88,25 +37,23 @@ MATLAB (version X.Y or higher, specify any dependencies if necessary).
 Running the Solver
 Clone this repository:
 
-bash
-Copy code
-git clone https://github.com/username/your-repo-name.git
-cd your-repo-name
+```bash
+git clone https://github.com/kiajll/FourierGalerkinSolver-ForcedBurgersTurbulence.git
+cd FourierGalerkinSolver-ForcedBurgersTurbulence
+```
+
 Open MATLAB and navigate to the repository directory.
-
-Execute the main solver script:
-
-matlab
-Copy code
+```bash
 main_solver
-Parameters
-Modify parameters in main_solver.m to change simulation settings:
+```
+### Parameters
+Modify parameters in `main_solver.m` to change simulation settings:
 
-N: Number of Fourier modes,
-dt: Time step,
-T: Total simulation time,
-nu: Viscosity coefficient.
-Results and Visualization
+* `N`: Number of Fourier modes,
+* `dt`: Time step,
+* `tf`: Total simulation time,
+* `nu`: Viscosity coefficient.
+### Results and Visualization
 The solver outputs the velocity field over time, which can be visualized to observe shock formations, energy cascades, and other turbulent structures. Example visualization functions are provided in plot_results.m.
 
 References
