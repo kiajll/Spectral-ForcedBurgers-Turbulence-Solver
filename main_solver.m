@@ -18,7 +18,7 @@ clear all, close all, clc
 % 01.Define Domain Length
 Lx = 1;                       % Length of Domain Function
 % 02.Inject Initial velocity field
-u_x0 = readmatrix(Initial_Velocity_Field.txt);
+u_x0 = readmatrix(initial_Velocity_Field.txt);
 N = Length(u_x0);             % Number of points in the spatial domain
 u = u_x0;
 u(1,N+1) = u(1,1);            % Periodic Domain condition
