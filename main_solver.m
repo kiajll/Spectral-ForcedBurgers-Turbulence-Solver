@@ -53,13 +53,13 @@ for k = 1:Nt
     ff = F_xt(1:N,k);
  
     u1 = u(1:N);
-    R1 = RHS_FFT_RK_NON(nu,Lx,kx_m,u1) + ff;
+    R1 = rk3_time_step(nu,Lx,kx_m,u1) + ff;
     
     u2 = u1 + (dt/2)*R1;
-    R2 = RHS_FFT_RK_NON(nu,Lx,kx_m,u2) + ff;
+    R2 = rk3_time_step(nu,Lx,kx_m,u2) + ff;
     
     u3 = u1 + (3*dt/4)*R2;
-    R3 = RHS_FFT_RK_NON(nu,Lx,kx_m,u3) + ff;
+    R3 = rk3_time_step(nu,Lx,kx_m,u3) + ff;
     
     u = u1 + (dt/9)*( 2*R1 + 3*R2 + 4*R3 );   
     u (1,N+1) = u(1,1);       % Periodic Domain condition
