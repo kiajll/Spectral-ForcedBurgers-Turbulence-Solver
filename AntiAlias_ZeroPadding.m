@@ -1,4 +1,3 @@
-%% Aliasing removal by zero padding (3/2-rule)
 function nonlinear_term_hat = AntiAlias_ZeroPadding(u_hat,Lx)
 %##########################################################################
 %##                                                                      ##
