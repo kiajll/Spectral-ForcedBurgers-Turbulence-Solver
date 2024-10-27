@@ -1,20 +1,20 @@
 # 1D Fourier Galerkin Solver for Forced Burgers Turbulence
 This repository contains a MATLAB implementation of a 1D Fourier Galerkin solver to simulate Burgers turbulence in a periodic domain. The solver uses a spectral approach to represent the solution in Fourier space, combined with a 3rd-order compact Runge-Kutta scheme for time integration.
 
-Features
-1D Forced Burgers Equation: Solves the forced Burgers equation to study turbulence phenomena.
-Spectral Fourier Galerkin Method: Utilizes the Fourier Galerkin method for spatial discretization, ensuring spectral accuracy.
-3rd-Order Runge-Kutta Scheme: A 3rd-order compact Runge-Kutta scheme is implemented for stable, accurate time integration.
-Periodic Domain: Enforces periodic boundary conditions, a common setup in turbulence simulations.
-Contents
-main_solver.m: The primary script for setting up and running simulations.
-rk3_time_step.m: A function implementing the 3rd-order compact Runge-Kutta time integration.
-spectral_forcing.m: A function generating external forcing for the Burgers equation.
-initial_conditions.m: A function defining the initial conditions for the simulation.
-Background
-The forced Burgers equation is a fundamental model for studying turbulence, shock formation, and energy transfer in fluid dynamics. In this solver, the Fourier Galerkin method provides spectral accuracy by projecting the equation onto Fourier modes, while the Runge-Kutta scheme stabilizes the integration over time.
+## Features
+* 1D Forced Burgers Equation: Solves the forced Burgers equation to study turbulence phenomena.
+* Spectral Fourier Galerkin Method: Utilizes the Fourier Galerkin method for spatial discretization, ensuring spectral accuracy.
+* 3rd-Order Runge-Kutta Scheme: A 3rd-order compact Runge-Kutta scheme is implemented for stable, accurate time integration.
+* Periodic Domain: Enforces periodic boundary conditions, a common setup in turbulence simulations.
+## Contents
+* `main_solver.m`: The primary script for setting up and running simulations.
+* `rk3_time_step.m`: A function implementing the 3rd-order compact Runge-Kutta time integration.
+* `spectral_forcing.m`: A function generating external forcing for the Burgers equation.
+* `initial_conditions.m`: A function defining the initial conditions for the simulation.
+## Background
+The forced Burgers equation is a fundamental model for studying turbulence, shock formation, and energy transfer in fluid dynamics. In this solver, the Fourier-Galerkin method provides spectral accuracy by projecting the equation onto Fourier modes, while the Runge-Kutta scheme stabilizes the integration over time.
 
-Equation Formulation
+## Equation Formulation
 The forced Burgers equation is given by:
 
 ∂
