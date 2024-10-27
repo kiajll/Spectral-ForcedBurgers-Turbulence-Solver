@@ -1,4 +1,4 @@
-function du_dt=RHS_FFT_RK_NON(nu,Lx,kx_m,u)
+function du_dt=RHS_FFT_rk3(nu,Lx,kx_m,u)
 %##########################################################################
 %##                                                                      ##
 %##                  ***Solving PDE in Fourier space***                  ##
