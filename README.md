@@ -9,8 +9,8 @@ This repository contains a MATLAB implementation of a 1D Fourier Galerkin solver
 ## Contents
 * `main_solver.m`: The primary script for setting up and running simulations.
 * `RHS_FFT_rk3.m`: A function implementing the right-hand side of the 3rd-order compact Runge-Kutta time integration.
-* `AntiAlias_ZeroPadding.m`
-* `Energy_spectrum.m`
+* `AntiAlias_ZeroPadding.m`: Implements de-Aliasing 3/2 rule technique to deal with Aliasing error.
+* `Energy_spectrum.m`: It derives the energy spectrum of the velocity field.
 * `spectral_forcing.m`: A function generating external forcing for the Burgers equation.
 * `initial_Velocity_Field.m`: A function defining the initial conditions for the simulation.
 ## Background
