@@ -39,7 +39,7 @@ t = linspace(t_min, t_max, Nt);
 % 06.Define Kinematic Viscosity
 a = 1;                        % Convective velocity
 nu = a/100;                   % Kinematic viscosity (1,10,100,1000,10000)..........................change it
-%% 07.Define the wave number for the test function 
+%% 07.Define wave number for the test function 
 m = -N/2:(N/2)-1;             % harmonic number for the test function
 kx_m = (m*2*pi/Lx);           % wave number for the test function
 kx_m = fftshift(kx_m);        % Re-order fft wavenumbers
