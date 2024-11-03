@@ -15,6 +15,7 @@ clear all, close all, clc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% Pre-Processing stage %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % 01.Define Domain Length
 Lx = 1;                       % Length of Domain Function
 
@@ -47,7 +48,8 @@ nu = 1/1000;                  % Kinematic viscosity
 % 07.Define wave number for the test function 
 m = -N/2:(N/2)-1;             % harmonic number for the test function
 kx_m = (m*2*pi/Lx);           % wave number for the test function
-kx_m = fftshift(kx_m);        % Re-order fft wavenumbers
+kx_m = fftshift(kx_m);        % Re-order fft wavenumber
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%% Processing stage %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,7 +73,6 @@ for k = 1:Nt
        
 uhat = fft(u(1:N));   
 [Ek, TKE, Dk, epsilon] = Energy_spectrum(nu,kx_m(1:N/2),uhat(1:N/2));
-
 
 end
 
