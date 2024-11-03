@@ -42,8 +42,7 @@ t_max = 1;                    % No periodicity in time
 t = linspace(t_min, t_max, Nt);
 
 % 06.Define Kinematic Viscosity
-a = 1;                        % Convective velocity
-nu = a/100;                   % Kinematic viscosity 
+nu = 1/1000;                  % Kinematic viscosity 
 
 % 07.Define wave number for the test function 
 m = -N/2:(N/2)-1;             % harmonic number for the test function
