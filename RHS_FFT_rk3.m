@@ -12,13 +12,16 @@ function du_dt=RHS_FFT_rk3(nu,Lx,kx_m,u)
 %##########################################################################
 u_hat = fft(u);
 
+%% Diffusion term
 ddu_hat_ddx = -(kx_m.^2).*u_hat;
 ddu_ddx = ifft(ddu_hat_ddx);
 
-%% 3/2 rule
+%% Advection term
 nonlinear_term_hat = AntiAlias_ZeroPadding(u_hat,Lx);
 nonlinear_term = ifft(nonlinear_term_hat);
-du_dt = nonlinear_term + nu.*ddu_ddx ;
+
+%% Total RHS term 
+du_dt = nonlinear_term + nu.*ddu_ddx ;        % in physical space
 
 %%
 end
